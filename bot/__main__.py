@@ -62,24 +62,24 @@ def stats(update, context):
 
 def start(update, context):
     buttons = ButtonMaker()
-    buttons.buildbutton("Updates Channel", "https://t.me/heliosmirror")
-    buttons.buildbutton("Support Group", "https://t.me/mirrorsociety")
+    buttons.buildbutton("Updates Channel", "https://t.me/TamilPrime_LinkZz")
+    buttons.buildbutton("Support Group", "https://t.me/TamilPrime_LinkZz")
     uname = f'<a href="tg://user?id={update.message.from_user.id}">{update.message.from_user.first_name}</a>'
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
-        start_string = f'''Hey! {uname},\n
+        start_string = f"𝗛𝗲𝘆 {uname}👋,\n\n𝗧𝗵𝗮𝗻𝗸 𝗬𝗼𝘂 𝗙𝗼𝗿 𝗦𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗶𝗻𝗴 𝗺𝗲.\n\n𝗜'𝗺 𝗔𝗹𝗶𝘃𝗲 🙂"
 This bot can mirror all your links to Google Drive! and also can Upload them on Telegram if you want.
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         sendMarkup(start_string, context.bot, update, reply_markup)
     else:
         if BOT_PM:
-            message = sendMessage(f'Dear {uname},\n\nIf You Want To Use Me, You Have To Join @{CHANNEL_USERNAME}\n\n<b>NOTE:</b> All The Uploaded Links and Leeched Files By You Will Be Sent Here In Your Private Chat From Now.', context.bot, update)
+            message = sendMessage(f'Dear {uname},\n\nIf You Want To Use Me, You Have To Join @{Prime_BotZ}\n\n<b>NOTE:</b> All The Uploaded Links and Leeched Files By You Will Be Sent Here In Your Private Chat From Now.', context.bot, update)
             Thread(target=auto_delete_message, args=(context.bot, update.message, message)).start()
             return
         else:
             message = sendMarkup(
-                f'Dear {uname},\n\nIf You Want To Use Me, You Have To Join @{CHANNEL_USERNAME}\n\n',
+                f'Dear {uname},\n\nIf You Want To Use Me, You Have To Join @{Prime_BotZ}\n\n',
                 context.bot, update, reply_markup)
             Thread(target=auto_delete_message, args=(context.bot, update.message, message)).start()
             return
