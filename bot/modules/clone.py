@@ -26,7 +26,7 @@ def cloneNode(update, context):
             LOGGER.error(user.status)
             if user.status not in ('member', 'creator', 'administrator'):
                 buttons = ButtonMaker()
-                buttons.buildbutton("Click Here To Join Updates Channel", f"https://t.me/{CHANNEL_USERNAME}")
+                buttons.buildbutton("Updates Channel", f"https://t.me/{CHANNEL_USERNAME}")
                 reply_markup = InlineKeyboardMarkup(buttons.build_menu(1))
                 message = sendMarkup(str(f"️<b>Dear {uname}, You haven't join our Updates Channel yet.</b>\n\nKindly Join @{CHANNEL_USERNAME} To Use Bots. "), bot, update, reply_markup)
                 Thread(target=auto_delete_upload_message, args=(bot, update.message, message)).start()
@@ -47,8 +47,8 @@ def cloneNode(update, context):
             channel = CHANNEL_USERNAME
             botstart = f"http://t.me/{b_uname}"
             keyboard = [
-                [InlineKeyboardButton("Click Here to Start Me", url=f"{botstart}")],
-                [InlineKeyboardButton("Join our Updates Channel", url=f"t.me/{channel}")]]
+                [InlineKeyboardButton("Start Me", url=f"{botstart}")],
+                [InlineKeyboardButton("Updates Channel", url=f"t.me/{channel}")]]
             message = sendMarkup(
                 f"Dear {uname},\n\n<b>I found that you haven't started me in PM (Private Chat) yet.</b>\n\nFrom now on i will give link and leeched files in PM and log channel only.",
                 bot, update, reply_markup=InlineKeyboardMarkup(keyboard))
@@ -129,7 +129,7 @@ def cloneNode(update, context):
                     update_all_messages()
             except IndexError:
                 pass
-        cc = f'\n\n<b>#Cloned By: </b>{tag}'
+        cc = f'\n\n<b>𝗥𝗲𝗾 𝗕𝘆: </b>{tag}'
         if button in ["cancelled", ""]:
             sendMessage(f"{tag} {result}", context.bot, update)
         else:
@@ -140,7 +140,7 @@ def cloneNode(update, context):
                 else:
                     warnmsg = f'\n<b>This message will be deleted in <i>{auto_delete_message} minutes</i> from this group.</b>\n'
         if BOT_PM and update.message.chat.type != 'private':
-            pmwarn = f"\n<b>I have sent links in PM.</b>\n"
+            pmwarn = f"\n<b>𝗟𝗶𝗻𝗸 𝗦𝗲𝗻𝗱𝗲𝗱 𝗧𝗼 𝗬𝗼𝘂𝗿 𝗣𝗠 & 𝗟𝗼𝗴 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 😎</b>\n"
         elif update.message.chat.type == 'private':
             pmwarn = ''
         else:
