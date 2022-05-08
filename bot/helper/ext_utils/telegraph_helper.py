@@ -55,4 +55,4 @@ class TelegraphHelper:
 			LOGGER.warning(f'Telegraph Flood control exceeded. I will sleep for {st.retry_after} seconds.')
 			sleep(st.retry_after)
 			return self.edit_page(path, title, content)
-telegraph=TelegraphHelper(f'{AUTHOR_NAME}', f'{AUTHOR_URL}')
+telegraph=TelegraphHelper('𝗣𝗿𝗶𝗺𝗲 𝗕𝗼𝘁𝘀', 'https://t.me/Prime_BotZ')
