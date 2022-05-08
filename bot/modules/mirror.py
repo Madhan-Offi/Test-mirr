@@ -258,8 +258,8 @@ class MirrorListener:
         else:
             warnmsg = ''
         if BOT_PM and self.message.chat.type != 'private':
-            pmwarn = f"\n<b>𝗜 𝗛𝗮𝘃𝗲 𝗦𝗲𝗻𝗱 𝗙𝗶𝗹𝗲𝘀 𝗜𝗻 𝗣𝗠 😎</b>\n"
-            pmwarn_mirror = f"\n<b>𝗜 𝗛𝗮𝘃𝗲 𝗦𝗲𝗻𝗱 𝗟𝗶𝗻𝗸𝘀 𝗜𝗻 𝗣𝗠 😎</b>\n"
+            pmwarn = f"\n<b>𝗙𝗶𝗹𝗲 𝗦𝗲𝗻𝗱𝗲𝗱 𝗧𝗼 𝗬𝗼𝘂𝗿 𝗣𝗠 😎</b>\n"
+            pmwarn_mirror = f"\n<b>𝗟𝗶𝗻𝗸 𝗦𝗲𝗻𝗱𝗲𝗱 𝗧𝗼 𝗬𝗼𝘂𝗿 𝗣𝗠 & 𝗟𝗼𝗴 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 😎</b>\n"
         elif self.message.chat.type == 'private':
             pmwarn = ''
             pmwarn_mirror = ''
@@ -430,7 +430,7 @@ def _mirror(bot, update, isZip=False, extract=False, isQbit=False, isLeech=False
             LOGGER.error(user.status)
             if user.status not in ('member', 'creator', 'administrator'):
                 buttons = ButtonMaker()
-                buttons.buildbutton("Click Here To Join Updates Channel", f"https://t.me/{CHANNEL_USERNAME}")
+                buttons.buildbutton("Updates Channel", f"https://t.me/{CHANNEL_USERNAME}")
                 reply_markup = InlineKeyboardMarkup(buttons.build_menu(1))
                 message = sendMarkup(
                     str(f"<b>Dear {uname}️ You haven't join our Updates Channel yet.</b>\n\nKindly Join @{CHANNEL_USERNAME} To Use Bots. "),
