@@ -258,21 +258,21 @@ class MirrorListener:
         else:
             warnmsg = ''
         if BOT_PM and self.message.chat.type != 'private':
-            pmwarn = f"\n<b>I have sent files in PM.</b>\n"
-            pmwarn_mirror = f"\n<b>I have sent links in PM.</b>\n"
+            pmwarn = f"\n<b>𝗜 𝗛𝗮𝘃𝗲 𝗦𝗲𝗻𝗱 𝗙𝗶𝗹𝗲𝘀 𝗜𝗻 𝗣𝗠 😎</b>\n"
+            pmwarn_mirror = f"\n<b>𝗜 𝗛𝗮𝘃𝗲 𝗦𝗲𝗻𝗱 𝗟𝗶𝗻𝗸𝘀 𝗜𝗻 𝗣𝗠 😎</b>\n"
         elif self.message.chat.type == 'private':
             pmwarn = ''
             pmwarn_mirror = ''
         else:
             pmwarn = ''
             pmwarn_mirror = ''
-        logwarn = f"\n<b>I have sent files in Log Channel.</b>\n"
+        logwarn = f"\n<b>𝗜 𝗛𝗮𝘃𝗲 𝗦𝗲𝗻𝗱 𝗙𝗶𝗹𝗲𝘀 𝗜𝗻 𝗟𝗼𝗴 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 😎</b>\n"
         if self.isLeech:
             count = len(files)
-            msg += f'\n<b>Total Files: </b>{count}'
+            msg += f'\n<b>𝗧𝗼𝘁𝗮𝗹 𝗙𝗶𝗹𝗲𝘀: </b>{count}'
             if typ != 0:
-                msg += f'\n<b>Corrupted Files: </b>{typ}'
-            msg += f'\n<b>#Leeched By: </b>{self.tag}\n'
+                msg += f'\n<b>𝗖𝗼𝗿𝗿𝘂𝗽𝘁𝗲𝗱 𝗙𝗶𝗹𝗲𝘀: </b>{typ}'
+            msg += f'\n<b>𝗥𝗲𝗾 𝗕𝘆: </b>{self.tag}\n'
             if BOT_PM:
                 message = sendMessage(msg + pmwarn + warnmsg, self.bot, self.update)
                 Thread(target=auto_delete_upload_message, args=(bot, self.message, message)).start()
@@ -326,10 +326,10 @@ class MirrorListener:
             else:
                 update_all_messages()
         else:
-            msg += f'\n\n<b>Type: </b>{typ}'
+            msg += f'\n\n<b>𝗧𝘆𝗽𝗲: </b>{typ}'
             if ospath.isdir(f'{DOWNLOAD_DIR}{self.uid}/{name}'):
-                msg += f'\n<b>SubFolders: </b>{folders}'
-                msg += f'\n<b>Files: </b>{files}'
+                msg += f'\n<b>𝗦𝘂𝗯𝗙𝗼𝗹𝗱𝗲𝗿𝘀: </b>{folders}'
+                msg += f'\n<b>𝗙𝗶𝗹𝗲𝘀: </b>{files}'
             link = short_url(link)
             buttons.buildbutton("☁️ Drive Link", link)
             LOGGER.info(f'Done Uploading {name}')
@@ -355,7 +355,7 @@ class MirrorListener:
             if SOURCE_LINK is True:
                 buttons.buildbutton(f"🔗 Source Link", S_link)
             """
-            uploader = f'\n\n<b>#Uploaded By: </b>{self.tag}\n'
+            uploader = f'\n\n<b>𝗥𝗲𝗾 𝗕𝘆: </b>{self.tag}\n'
             if MIRROR_LOGS:
                 try:
                     for i in MIRROR_LOGS:
@@ -463,8 +463,8 @@ def _mirror(bot, update, isZip=False, extract=False, isQbit=False, isLeech=False
             channel = CHANNEL_USERNAME
             botstart = f"http://t.me/{b_uname}"
             keyboard = [
-                [InlineKeyboardButton("Click Here to Start Me", url=f"{botstart}")],
-                [InlineKeyboardButton("Join our Updates Channel", url=f"t.me/{channel}")]]
+                [InlineKeyboardButton("Start Me", url=f"{botstart}")],
+                [InlineKeyboardButton("Updates Channel", url=f"t.me/{channel}")]]
             message = sendMarkup(
                 f"Dear {uname},\n\n<b>I found that you haven't started me in PM (Private Chat) yet.</b>\n\nFrom now on i will give link and leeched files in PM and log channel only",
                 bot, update, reply_markup=InlineKeyboardMarkup(keyboard))
